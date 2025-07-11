@@ -11,8 +11,28 @@ namespace Lecture_BD
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter Your Name :");
-            string str = Console.ReadLine();
+            string input = Console.ReadLine();
 
+            string toggled = "";
+
+            foreach(char c in input)
+            {
+                if (char.IsUpper(c))
+                {
+                    toggled += char.ToLower(c);
+                }
+                else if (char.IsLower(c))
+                {
+                    toggled += char.ToUpper(c);
+
+                }
+                else
+                {
+                    toggled += c;
+
+                }
+            }
+            Console.WriteLine("Toggled Class :" + toggled);
         }
     }
 }

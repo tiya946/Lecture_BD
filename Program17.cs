@@ -4,18 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Lecture_BD
 {
-    internal class Program17
+    class Program
     {
-        public static void Main(string[] agrs)
+        public static void Main()
         {
-            Console.WriteLine("Enter Your Phone Number :");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
 
-
-
-
+            if (input.Length >= 5)
+            {
+                string masked = input.Substring(0, input.Length - 5) + new string('X', 5);
+                Console.WriteLine("Output: " + masked);
+            }
+            else
+            {
+                Console.WriteLine("Input too short to mask last 5 digits.");
+            }
         }
     }
 }
